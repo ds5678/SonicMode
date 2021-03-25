@@ -15,11 +15,15 @@ namespace SonicMode
         {
             internal static void Postfix(ref float __result)
             {
-                __result *= Settings.options.walkSpeedMultiplier;
-                if (InputManager.GetSprintDown(InputManager.m_CurrentContext))
+                if (GameManager.GetPlayerManagerComponent().PlayerIsSprinting())
                 {
                     __result *= Settings.options.sprintSpeedMultiplier;
                 }
+                else if (GameManager.GetPlayerManagerComponent().PlayerIsCrouched())
+                {
+                    __result *= Settings.options.crouchSpeedMultiplier;
+                }
+                else __result *= Settings.options.walkSpeedMultiplier;
             }
         }
 

@@ -4,24 +4,29 @@ namespace SonicMode
 {
 	internal class SonicModeSettings : JsonModSettings
 	{
-		[Name("Movement Speed Multiplier")]
-		[Description("Scales the speed at which the player moves when touching the ground.")]
-		[Slider(1f, 5f, 41)]
+		[Name("Crouch Speed Multiplier")]
+		[Description("Scales the speed at which the player moves when crouched. (Default = 1)")]
+		[Slider(1f, 5f, 81,NumberFormat = "{0:F2}")]
+		public float crouchSpeedMultiplier = 1f;
+
+		[Name("Walk Speed Multiplier")]
+		[Description("Scales the speed at which the player moves when walking normally. (Default = 1)")]
+		[Slider(1f, 5f, 81, NumberFormat = "{0:F2}")]
 		public float walkSpeedMultiplier = 1f;
 
 		[Name("Sprint Speed Multiplier")]
-		[Description("Scales the speed at which the player moves when sprinting.")]
-		[Slider(1f, 50f, 99)]
+		[Description("Scales the speed at which the player moves when sprinting. (Default = 1)")]
+		[Slider(1f, 30f, 291)]
 		public float sprintSpeedMultiplier = 1f;
 
 		[Name("Recharge Multiplier")]
-		[Description("Scales the speed at which the stamina bar refills.")]
-		[Slider(0.2f, 20f, 100)]
+		[Description("Scales the speed at which the stamina bar refills. (Default = 1)")]
+		[Slider(0.1f, 20f, 200)]
 		public float rechargeScalar = 1f;
 
-		[Name("Seconds before recovery scalar")]
-		[Description("Scales the number of seconds before the stamina bar refills.")]
-		[Slider(0f, 2f, 21)]
+		[Name("Seconds Before Recovery Multiplier")]
+		[Description("Scales the number of seconds before the stamina bar refills. (Default = 1)")]
+		[Slider(0f, 2f, 201, NumberFormat = "{0:F2}")]
 		public float secondsScalar = 1f;
 	}
 	internal static class Settings

@@ -1,6 +1,6 @@
 ﻿# Sonic Mode
 
-A mod for *The Long Dark* that allows you to sprint up to 50 times faster.
+A mod for *The Long Dark* that allows you to sprint up to 30 times faster and change other movement characteristics.
 
 ## Installation
 
