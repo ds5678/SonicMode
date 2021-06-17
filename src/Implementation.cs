@@ -1,6 +1,5 @@
-﻿using UnityEngine;
-using MelonLoader;
-using System.IO;
+﻿using MelonLoader;
+using UnityEngine;
 
 namespace SonicMode
 {
@@ -13,7 +12,7 @@ namespace SonicMode
         public override void OnApplicationStart()
         {
             Debug.Log($"[{Info.Name}] Version {Info.Version} loaded!");
-            Settings.OnLoad();
+            Settings.options.AddToModSettings("Sonic Mode");
         }
     }
 }
