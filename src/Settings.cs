@@ -27,7 +27,7 @@ namespace SonicMode
         public float rechargeScalar = 1f;
 
         [Name("Seconds Before Recovery Multiplier")]
-        [Description("Scales the number of seconds before the stamina bar refills. (Default = 1)")]
+        [Description("Scales the number of seconds before the stamina bar starts refilling. (Default = 1)")]
         [Slider(0f, 2f, 201, NumberFormat = "{0:F2}")]
         public float secondsScalar = 1f;
     }
