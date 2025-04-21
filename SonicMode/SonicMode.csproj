@@ -1,5 +1,4 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-	<!--This is an xml comment. Comments have no impact on compiling.-->
 
 	<PropertyGroup>
 		<!--This is the .NET version the mod will be compiled with. Don't change it.-->
@@ -14,19 +13,33 @@
 		<!--This enables nullable annotation and analysis. It's good coding form.-->
 		<Nullable>enable</Nullable>
 
-		<!--This tells the compiler to use assembly attributes instead of generating its own.-->
-		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-
 		<!--PDB files give line numbers in stack traces (errors). This is useful for debugging. There are 3 options:-->
 		<!--full has a pdb file created beside the dll.-->
-		<!--embedded has the pdb data embedded within the dll. This is useful because bug reports will then have line numbers.-->
+		<!--embedded has the pdb data embedded within the dll. This can be useful because then bug reports will have line numbers.-->
 		<!--none skips creation of pdb data.-->
 		<DebugType>embedded</DebugType>
+
+		<!--This is the version of the mod.-->
+		<Version>2.2.0</Version>
+		<Description>Lets you go fast!</Description>
+
+		<!--This is who created the mod.-->
+		<Authors>ds5678</Authors>
 	</PropertyGroup>
 
 	<!--This is the of packages that the mod references.-->
 	<ItemGroup>
-		<PackageReference Include="ds5678.Modding.TLD.Il2CppAssemblies.Windows" Version="2.6.0" />
+		<!--This package contains almost everything a person could possibly need to reference while modding.-->
+		<PackageReference Include="STBlade.Modding.TLD.Il2CppAssemblies.Windows" Version="2.40.0" />
+
+		<!--This package contains a source generator to reduce boilerplate while modding.-->
+		<PackageReference Include="ds5678.Modding.TLD.SourceGenerator" Version="1.0.1">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+
+		<!--Note: this is not the latest version of ModSettings. However, the latest version (which isn't on NuGet) doesn't contain any API changes, so we're fine.-->
 		<PackageReference Include="ds5678.Modding.TLD.ModSettings" Version="1.9.0" />
 	</ItemGroup>
+
 </Project>
